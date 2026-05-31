@@ -21,7 +21,7 @@ This system assumes the AI is inherently vulnerable and trusts nothing—not the
 * **Trigger:** Instantly upon receiving the user prompt.
 * **Mechanism:** Analyzes the linguistic intent of the user's request and physically restricts the Agent's toolkit using the Principle of Least Privilege. If the user asks to "read" a file, dangerous tools (like `drop_database`) are completely removed from the Agent's memory before it executes.
 
-### 2. The Gatekeeper (Deterministic RBAC)
+### 2. The Gatekeeper (Deterministic RBAC/ROLE BASED ACCESS CONTROL)
 * **Trigger:** When the Agent attempts to invoke a restricted tool.
 * **Mechanism:** A hardcoded Python environment check. Before the LLM can execute a high-risk tool, the system verifies the user's explicit systemic role. Unauthorized roles (e.g., `nurse`) are deterministically blocked from admin tools, regardless of the LLM's reasoning.
 
